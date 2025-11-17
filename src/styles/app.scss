@@ -1,0 +1,29 @@
+$bg: #0b1020;
+$fg: #ffffff;
+$muted: rgba(255,255,255,.75);
+$brandA: #6366f1; // indigo
+$brandB: #a855f7; // purple
+
+:root {
+  --app-bg: #{$bg};
+  --app-fg: #{$fg};
+}
+
+body {
+  background: var(--app-bg);
+  color: var(--app-fg);
+}
+
+.gradient-ring {
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 9999px;
+    background: linear-gradient(135deg, rgba($brandA,.7), rgba($brandB,.7));
+    filter: blur(12px);
+    opacity: .8;
+    z-index: -1;
+  }
+}
